@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local(oswaldmedium),
+    url("../../fonts/oswaldregular.woff2") format("woff2"),
+    url("../../fonts/oswaldregular.woff") format("woff");
+}
+
+$tablet-width: 601px;
+$desktop-width: 1440px;
+$mobile-width-only: 600px;
+
+$darkgreen: #5EAA2F;
+$lightgreen: #68B738;
+$grey: #F2F2F2;
+$darkgrey: #E6E6E6;
+$lightgrey: #D9D9D9;
+$pink: #FF8282;
+$darkpink: #D24899;
+
+.page{
+  height: 100%;
+  align-items: center;
+  overflow-x: hidden;
+  @media (min-width: $tablet-width){
+    //width: 768px;
+
+  }
+  @media (min-width: $desktop-width){
+    //width: 1440px;
+  }
+}
+
+body{
+  min-width: 320px;
+  font-family: "Oswald", "Arial", sans-serif;
+  margin:0;
+  padding: 0;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+img{
+  max-width: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+.visually-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip:rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.page-main{
+  width: 100%;
+}
