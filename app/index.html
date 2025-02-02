@@ -159,7 +159,7 @@
 <!--    <button class="buy-button hidden-button" id="buy-button" onclick="onClickHundler()">-->
 <!--      Оплатить корзину-->
 <!--    </button>-->
-    <a href="https://lavka.yandex.ru/" class="buy-button hidden-button" id="buy-button">
+    <a href="https://lavka.yandex.ru/" class="hidden-button" id="buy-button">
       Оплатить корзину
     </a>
   </div>
@@ -174,12 +174,6 @@
       console.log(cartItems.length)
       const itemCount = cartItems.length;
       let currenItem;
-
-      function onClickHundler (){
-        alert("Покупка оплачена!");
-        // setTimeout(()=> location.reload(), 1000);
-        location.reload();
-      }
 
       racksWrapper.addEventListener('dragstart', (event) => {
         if (event.target.classList.contains('item')) {
@@ -200,6 +194,7 @@
         const itemCount = cartItems.length;
         if (itemCount > 1) {
           buyButton.classList.remove('hidden-button');
+          buyButton.classList.add('buy-button');
           if (itemCount > 2) return
         }
         cart.appendChild(currenItem);
