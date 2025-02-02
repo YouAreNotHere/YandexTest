@@ -148,6 +148,19 @@ li {
   background-size: cover;
   z-index: 1
 }
+@media (min-width:768px) {
+  .middle-rack-background,
+  .top-rack-background {
+    height: 400px
+  }
+}
+@media (min-width:1440px) {
+  .middle-rack-background,
+  .top-rack-background {
+    width: 846px;
+    height: 32px
+  }
+}
 .top-rack-background {
   margin-top: -1px
 }

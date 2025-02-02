@@ -169,9 +169,6 @@
         width="211"
         height="11px">
     </picture>
-    <svg class="top-of-rack" width="211" height="11" viewBox="0 0 211 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M211 11L204 0.86319H6.40259L0 11" fill="#F39C12"/>
-    </svg>
     <div class="top-rack-background" id="top-rack-background">
     </div>
     <div class="rack-shadow" id="rack-shadow">
@@ -235,9 +232,25 @@
           height="46.98px">
       </picture>
     </div>
-    <svg class="top-of-rack" width="211" height="10" viewBox="0 0 211 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M211.37 11.0095L204.967 0.86319H6.40259L0 11.0095H211.37Z" fill="#F39C12"/>
-    </svg>
+    <picture>
+      <source
+        media="(min-width:1400px)"
+        srcset="img/src/TopOfRackBackground3.png"
+        width="846px"
+        height="42.32px">
+      <source
+        media="(min-width:768px)"
+        srcset="img/src/TopOfRackBackground2.png"
+        width="423px"
+        height="22.32px">
+      <img
+        src="img/src/TopOfRackBackground.svg"
+        alt="TopOfRackBackground"
+        class="top-of-rack-background"
+        draggable="false"
+        width="211"
+        height="11px">
+    </picture>
     <div class="middle-rack-background" id="middle-rack-background">
     </div>
     <div class="rack-shadow" id="middle-rack-shadow">
@@ -321,6 +334,25 @@
           height="50.98px">
       </picture>
     </div>
+    <picture>
+      <source
+        media="(min-width:1400px)"
+        srcset="img/src/Salad3.png"
+        width="186px"
+        height="153px">
+      <source
+        media="(min-width:768px)"
+        srcset="img/src/Salad2.png"
+        width="124px"
+        height="102px">
+      <img
+        src="img/src/Salad.png"
+        alt="Salad"
+        class="item salad"
+        draggable="true"
+        width="61.74px"
+        height="50.98px">
+    </picture>
     <svg class="top-of-rack" width="212" height="21" viewBox="0 0 212 21" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M204.967 0.538055H6.40259L0 20.5328H211.37L204.967 0.538055Z" fill="#E3E7E8"/>
     </svg>
@@ -356,6 +388,20 @@
       const newItemInCartMargin = 40;
       let currentItem;
 
+      const checkBuyButton = (itemsCount) => {
+        if (itemsCount <= 1) return;
+          buyButton.classList.remove('hidden-button');
+          buyButton.classList.add('buy-button');
+      }
+
+      const addItemToCart = (itemsCount) => {
+        cart.appendChild(currentItem);
+        currentItem.style.top = `${cartRect.height - halfOfCart - currentItem.getBoundingClientRect().height}px`;
+        currentItem.style.left = `${cartMargin + (itemsCount * newItemInCartMargin)}px`;
+        currentItem.style.zIndex = "0";
+        currentItem.classList.add('cart-item');
+      }
+
       function handleStart (event){
         if (event.target.classList.contains('item')) {
           event.dataTransfer.setData('text/plain', event.target.textContent);
@@ -367,18 +413,13 @@
       function handleDrop (event) {
         event.preventDefault();
         const cartItems = document.querySelectorAll('.cart-item');
-        const itemCount = cartItems.length;
-        if (itemCount > 1) {
-          buyButton.classList.remove('hidden-button');
-          buyButton.classList.add('buy-button');
-          if (itemCount > 2) return
-        }
-        cart.appendChild(currentItem);
-        currentItem.style.top = `${cartRect.height - halfOfCart - currentItem.getBoundingClientRect().height}px`;
-        console.log(itemCount);
-        currentItem.style.left = `${cartMargin + (itemCount * newItemInCartMargin)}px`;
-        currentItem.style.zIndex = "0";
-        currentItem.classList.add('cart-item');
+        const itemsCount = cartItems.length;
+        checkBuyButton(itemsCount);
+
+        if(itemsCount > 2) return;
+
+        addItemToCart(itemsCount);
+
         currentItem = null;
       }
 
