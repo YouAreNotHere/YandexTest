@@ -99,6 +99,9 @@ li {
   background-size: cover;
   z-index: 1
 }
+.top-rack-background {
+  margin-top: -1px
+}
 .bottom-rack {
   background-color: #bdc3c7;
   width: 211.37px;
@@ -112,8 +115,7 @@ li {
 .foundation {
   width: 201.03px;
   height: 91.04px;
-  background-color: #e67e22;
-  margin-bottom: 140px
+  background-color: #e67e22
 }
 .top-of-foundation {
   background-color: #d35400;
@@ -173,7 +175,34 @@ li {
   top: 20px
 }
 .cart {
+  position: relative;
+  top: -92px;
+  width: 278px;
+  height: 240px;
+  z-index: 1
+}
+.cart-image {
   position: absolute;
-  left: -40px;
-  width: 278px
+  z-index: 2
+}
+.hidden-button {
+  display: none
+}
+.buy-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #21201f;
+  width: 174px;
+  height: 56px;
+  background-color: #fce000;
+  border-radius: 16px;
+  margin-top: -170px;
+  z-index: 3
 }

@@ -7,10 +7,9 @@
       <link href="css/normalize.css" rel="stylesheet">
       <link rel ="preload" href="css/app.min.css" as="style">
       <link href="css/app.min.css" rel="stylesheet">
-      <link rel ="preload" href="../../fonts/oswaldregular.woff2" as="font" crossorigin>
   </head>
   <body class="page__body">
-  <div class="racks-wrapper">
+  <div class="racks-wrapper" id="racks-wrapper">
     <svg width="212" height="12" viewBox="0 0 212 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M211.37 11.9543H0C0 5.36029 5.36028 0 11.9543 0H199.416C206.01 0 211.37 5.36029 211.37 11.9543Z" fill="#E67E22"/>
     </svg>
@@ -107,7 +106,7 @@
     </div>
     <div class="rack-shadow" id="middle-rack-shadow">
     </div>
-    <div class="bottom-area" id="bottom-area">
+    <div class="bottom-area" id="bottom-area" draggable="true">
       <img
         src="img/src/PineapplePNG.png"
         alt="Pineapple"
@@ -145,17 +144,74 @@
     </div>
     <div class="foundation" id="foundation">
       <div class="top-of-foundation" id="top-of-foundation">
-        <div class="cart" id="cart">
-          <img
-            src="img/src/Cart.png"
-            alt="Cart"
-            draggable="false"
-            width="276.08px"
-            height="240px"
-          >
-        </div>
       </div>
     </div>
+    <div class="cart" id="cart">
+      <img
+        src="img/src/Cart.png"
+        class="cart-image"
+        alt="Cart"
+        draggable="false"
+        width="276.08px"
+        height="240px"
+      >
+    </div>
+<!--    <button class="buy-button hidden-button" id="buy-button" onclick="onClickHundler()">-->
+<!--      Оплатить корзину-->
+<!--    </button>-->
+    <a href="https://lavka.yandex.ru/" class="buy-button hidden-button" id="buy-button">
+      Оплатить корзину
+    </a>
   </div>
   </body>
+    <script>
+      const racksWrapper = document.getElementById('racks-wrapper');
+      const cart = document.getElementById('cart');
+      const topArea = document.getElementById('top-area');
+      const cartRect = cart.getBoundingClientRect();
+      const cartItems = document.querySelectorAll('.cart-item');
+      const buyButton = document.getElementById('buy-button');
+      console.log(cartItems.length)
+      const itemCount = cartItems.length;
+      let currenItem;
+
+      function onClickHundler (){
+        alert("Покупка оплачена!");
+        // setTimeout(()=> location.reload(), 1000);
+        location.reload();
+      }
+
+      racksWrapper.addEventListener('dragstart', (event) => {
+        if (event.target.classList.contains('item')) {
+          event.dataTransfer.setData('text/plain', event.target.textContent);
+          currenItem = event.target;
+          console.dir(event.target.textContent)
+        }
+      });
+      // Обработчик для события dragover (обязательно)
+      cart.addEventListener('dragover', (event) => {
+        event.preventDefault(); // Разрешаем сбрасывание
+      });
+
+      // Обработчик для события drop
+      cart.addEventListener('drop', (event) => {
+        event.preventDefault();
+        const cartItems = document.querySelectorAll('.cart-item');
+        const itemCount = cartItems.length;
+        if (itemCount > 1) {
+          buyButton.classList.remove('hidden-button');
+          if (itemCount > 2) return
+        }
+        cart.appendChild(currenItem);
+        currenItem.style.top = `${cartRect.height - 50 - currenItem.getBoundingClientRect().height}px`;
+        console.log(itemCount);
+        currenItem.style.left = `${75 + (itemCount * 40)}px`;
+        currenItem.style.zIndex = "0";
+        currenItem.classList.add('cart-item');
+        currenItem = null;
+      });
+
+      // Обработчик для начала перетаскивания
+
+    </script>
 </html>
