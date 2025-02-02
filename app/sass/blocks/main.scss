@@ -1,16 +1,7 @@
-@font-face {
-  font-family: "Oswald";
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: local(oswaldmedium),
-    url("../../fonts/oswaldregular.woff2") format("woff2"),
-    url("../../fonts/oswaldregular.woff") format("woff");
-}
 
 $tablet-width: 601px;
 $desktop-width: 1440px;
-$mobile-width-only: 600px;
+$mobile-width-only: 500px;
 
 $darkgreen: #5EAA2F;
 $lightgreen: #68B738;
@@ -19,9 +10,11 @@ $darkgrey: #E6E6E6;
 $lightgrey: #D9D9D9;
 $pink: #FF8282;
 $darkpink: #D24899;
+$closet-background: #34495E;
 
 .page{
   height: 100%;
+  background-color: #EDF6FF;
   align-items: center;
   overflow-x: hidden;
   @media (min-width: $tablet-width){
@@ -34,13 +27,12 @@ $darkpink: #D24899;
 }
 
 body{
-  min-width: 320px;
   font-family: "Oswald", "Arial", sans-serif;
   margin:0;
   padding: 0;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  width: 100%;
+  width: 300px;
 }
 
 img{
@@ -75,4 +67,33 @@ li{
 
 .page-main{
   width: 100%;
+}
+
+.racks-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+}
+
+.top-rack,
+.middle-rack,
+.bottom-rack{
+  display: flex;
+  justify-content: space-around;
+  background-color: $closet-background;
+}
+
+.top-rack-background,
+.middle-rack-background{
+  //position: absolute;
+  width: 211.37px;
+  height: 7.85px;
+  background-image: url('../../img/src/Rack.svg');
+  background-size: cover;
+  z-index: 1;
+}
+
+.item{
+  z-index: 1;
 }
