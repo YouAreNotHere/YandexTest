@@ -78,12 +78,12 @@ li {
 }
 @media (min-width:768px) {
   .racks-wrapper {
-    width: 600px
+    width: 400px
   }
 }
 @media (min-width:1440px) {
   .racks-wrapper {
-    width: 780px
+    width: 795px
   }
 }
 .bottom-area,
@@ -101,25 +101,48 @@ li {
 }
 @media (min-width:768px) {
   .top-area {
-    height: 600px
+    height: 230px
   }
 }
 @media (min-width:1440px) {
   .top-area {
-    height: 900px
+    height: 450px
   }
 }
 .flags {
   position: absolute;
-  top: -1px;
-  left: -7px;
+  top: -3px;
+  left: -3px;
   z-index: 1
+}
+@media (min-width:768px) {
+  .flags {
+    top: -4px;
+    left: -6px
+  }
+}
+@media (min-width:1440px) {
+  .flags {
+    margin-top: -5px;
+    left: -14px
+  }
 }
 .flags-shadow {
   position: absolute;
-  top: 20px;
+  top: 5px;
   left: 0;
   width: 100%
+}
+@media (min-width:768px) {
+  .flags-shadow {
+    height: 400px;
+    top: -70px
+  }
+}
+@media (min-width:1440px) {
+  .flags-shadow {
+    margin-top: 30px
+  }
 }
 .top-of-rack {
   margin-top: -1px
@@ -131,18 +154,19 @@ li {
 @media (min-width:768px) {
   .bottom-area,
   .middle-area {
-    height: 400px
+    height: 100px
   }
 }
 @media (min-width:1440px) {
   .bottom-area,
   .middle-area {
-    height: 700px
+    height: 200px;
+    margin-top: -1px
   }
 }
 .middle-rack-background,
 .top-rack-background {
-  width: 211px;
+  width: 211.5px;
   height: 7.85px;
   background-color: #f1c40f;
   background-size: cover;
@@ -151,24 +175,87 @@ li {
 @media (min-width:768px) {
   .middle-rack-background,
   .top-rack-background {
-    height: 400px
+    height: 17px;
+    width: 423px
   }
 }
 @media (min-width:1440px) {
   .middle-rack-background,
   .top-rack-background {
-    width: 846px;
-    height: 32px
+    width: 840px;
+    height: 32px;
+    margin-top: 11px
+  }
+}
+.middle-rack-background {
+  margin-top: 2px
+}
+@media (min-width:768px) {
+  .middle-rack-background {
+    margin-top: 0
+  }
+}
+@media (min-width:1440px) {
+  .middle-rack-background {
+    margin-top: 0
   }
 }
 .top-rack-background {
+  margin-top: 2px
+}
+@media (min-width:768px) {
+  .top-rack-background {
+    margin-top: 0
+  }
+}
+@media (min-width:1440px) {
+  .top-rack-background {
+    margin-top: 10px
+  }
+}
+.top-of-rack-background {
+  margin-top: -4px;
+  margin-left: 1px;
+  height: 11px
+}
+@media (min-width:768px) {
+  .top-of-rack-background {
+    height: 22px
+  }
+}
+@media (min-width:1440px) {
+  .top-of-rack-background {
+    width: 846px;
+    height: 32px;
+    margin-top: -5px
+  }
+}
+.top-of-bottom-rack {
   margin-top: -1px
+}
+@media (min-width:1440px) {
+  .top-of-bottom-rack {
+    margin-top: -4px
+  }
 }
 .bottom-rack {
   background-color: #bdc3c7;
   width: 211.37px;
   height: 20.23px;
-  margin-top: -1px
+  margin-top: -6px
+}
+@media (min-width:768px) {
+  .bottom-rack {
+    width: 423px;
+    height: 41px
+  }
+}
+@media (min-width:1440px) {
+  .bottom-rack {
+    width: 846px;
+    height: 81px;
+    margin-top: -4px
+  }
 }
 .item {
   z-index: 3;
@@ -179,16 +266,52 @@ li {
   height: 91.04px;
   background-color: #e67e22
 }
+@media (min-width:768px) {
+  .foundation {
+    width: 403px;
+    height: 170px
+  }
+}
+@media (min-width:1440px) {
+  .foundation {
+    width: 805px;
+    height: 350px;
+    left: 0
+  }
+}
 .top-of-foundation {
   background-color: #d35400;
   height: 20.04px;
   width: 100%;
   position: relative
 }
+@media (min-width:768px) {
+  .top-of-foundation {
+    width: 403px;
+    height: 42px
+  }
+}
+@media (min-width:1440px) {
+  .top-of-foundation {
+    width: 805px;
+    height: 82px;
+    left: 0
+  }
+}
 .rack-shadow {
   height: 25.04px;
   background-color: #1d2a36;
   width: 100%
+}
+@media (min-width:768px) {
+  .rack-shadow {
+    height: 50px
+  }
+}
+@media (min-width:1440px) {
+  .rack-shadow {
+    height: 100px
+  }
 }
 .wine {
   position: absolute;
@@ -196,61 +319,230 @@ li {
   left: 15px;
   z-index: 3
 }
+@media (min-width:768px) {
+  .wine {
+    top: -5px
+  }
+}
+@media (min-width:1440px) {
+  .wine {
+    top: -20px;
+    left: 60px
+  }
+}
 .milk {
   left: 57px;
   top: 22px
+}
+@media (min-width:768px) {
+  .milk {
+    top: 63px;
+    left: 110px
+  }
+}
+@media (min-width:1440px) {
+  .milk {
+    top: 110px;
+    left: 230px
+  }
 }
 .jar {
   left: 97px;
   top: 72px
 }
+@media (min-width:768px) {
+  .jar {
+    top: 160px;
+    left: 195px
+  }
+}
+@media (min-width:1440px) {
+  .jar {
+    top: 310px;
+    left: 390px
+  }
+}
 .cheese {
   left: 152px;
   top: 80px
+}
+@media (min-width:768px) {
+  .cheese {
+    top: 175px;
+    left: 300px
+  }
+}
+@media (min-width:1440px) {
+  .cheese {
+    top: 350px;
+    left: 590px
+  }
 }
 .meet {
   left: 0;
   top: 15px
 }
+@media (min-width:768px) {
+  .meet {
+    top: 15px;
+    left: 5px
+  }
+}
+@media (min-width:1440px) {
+  .meet {
+    top: 20px
+  }
+}
 .chicken {
   left: 55px;
   top: 23px
+}
+@media (min-width:768px) {
+  .chicken {
+    left: 110px;
+    top: 21px
+  }
+}
+@media (min-width:1440px) {
+  .chicken {
+    top: 40px;
+    left: 200px
+  }
 }
 .chips {
   left: 123px;
   top: 21px
 }
+@media (min-width:768px) {
+  .chips {
+    top: 35px;
+    left: 253px
+  }
+}
+@media (min-width:1440px) {
+  .chips {
+    top: 70px;
+    left: 500px
+  }
+}
 .pineapple {
   left: 7px;
   top: -10px
+}
+@media (min-width:768px) {
+  .pineapple {
+    left: 10px;
+    top: -25px
+  }
+}
+@media (min-width:1440px) {
+  .pineapple {
+    left: 20px;
+    top: 0
+  }
 }
 .bananas {
   left: 52px;
   top: 18px
 }
+@media (min-width:768px) {
+  .bananas {
+    top: 26px;
+    left: 100px
+  }
+}
+@media (min-width:1440px) {
+  .bananas {
+    left: 200px;
+    top: 70px
+  }
+}
 .apple {
   left: 109px;
   top: 29px
+}
+@media (min-width:768px) {
+  .apple {
+    left: 225px;
+    top: 50px
+  }
+}
+@media (min-width:1440px) {
+  .apple {
+    left: 450px;
+    top: 110px
+  }
 }
 .salad {
   left: 150px;
   top: 20px
 }
+@media (min-width:768px) {
+  .salad {
+    top: 35px;
+    left: 300px
+  }
+}
+@media (min-width:1440px) {
+  .salad {
+    left: 650px;
+    top: 120px
+  }
+}
 .cart {
-  position: relative;
-  top: -92px;
+  position: absolute;
+  top: 380px;
   width: 278px;
   height: 240px;
   z-index: 1
+}
+@media (min-width:768px) {
+  .cart {
+    width: 553px;
+    height: 458px;
+    top: 730px
+  }
+}
+@media (min-width:1440px) {
+  .cart {
+    width: 1105px;
+    height: 914px;
+    top: 1410px;
+    left: 150px
+  }
 }
 .cart-image {
   position: absolute;
   z-index: 2
 }
+.cart-box {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  top: 185px;
+  left: 70px
+}
+@media (min-width:768px) {
+  .cart-box {
+    width: 350px;
+    height: 50px;
+    left: 150px;
+    top: 350px
+  }
+}
+@media (min-width:1440px) {
+  .cart-box {
+    width: 600px;
+    height: 100px;
+    top: 750px;
+    left: 310px
+  }
+}
 .hidden-button {
   display: none
 }
 .buy-button {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -266,5 +558,22 @@ li {
   background-color: #fce000;
   border-radius: 16px;
   margin-top: -170px;
-  z-index: 3
+  z-index: 3;
+  top: 700px;
+  left: 65px
+}
+@media (min-width:768px) {
+  .buy-button {
+    width: 300px;
+    height: 100px;
+    top: 1200px
+  }
+}
+@media (min-width:1440px) {
+  .buy-button {
+    width: 650px;
+    height: 150px;
+    top: 2250px;
+    left: 400px
+  }
 }

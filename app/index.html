@@ -35,13 +35,13 @@
           <source
             media="(min-width:1400px)"
             srcset="img/src/Flags.svg"
-            width="846px"
-            height="121.32px">
+            width="850px"
+            height="125px">
           <source
             media="(min-width:768px)"
             srcset="img/src/Flags.svg"
-            width="423px"
-            height="61.32px">
+            width="425px"
+            height="63px">
           <img
             src="img/src/FlagsPNG.png"
             class="flags"
@@ -69,7 +69,7 @@
             alt="FlagsShadow"
             draggable="false"
             width="199px"
-            height="30px">
+            height="40px">
         </picture>
         </svg>
       </div>
@@ -149,8 +149,8 @@
           width="36.2"
           height="34.38px">
       </picture>
-    </div>
-    <picture>
+    </div >
+    <picture class="top-of-rack-background">
       <source
         media="(min-width:1400px)"
         srcset="img/src/TopOfRackBackground3.png"
@@ -162,12 +162,11 @@
         width="423px"
         height="22.32px">
       <img
-        src="img/src/TopOfRackBackground.svg"
+        src="img/src/TopOfRackBackgroundPNG.png"
         alt="TopOfRackBackground"
-        class="top-of-rack-background"
         draggable="false"
-        width="211"
-        height="11px">
+        width="213"
+        height="11">
     </picture>
     <div class="top-rack-background" id="top-rack-background">
     </div>
@@ -232,7 +231,7 @@
           height="46.98px">
       </picture>
     </div>
-    <picture>
+    <picture class="top-of-rack-background">
       <source
         media="(min-width:1400px)"
         srcset="img/src/TopOfRackBackground3.png"
@@ -244,11 +243,10 @@
         width="423px"
         height="22.32px">
       <img
-        src="img/src/TopOfRackBackground.svg"
+        src="img/src/TopOfRackBackgroundPNG.png"
         alt="TopOfRackBackground"
-        class="top-of-rack-background"
         draggable="false"
-        width="211"
+        width="213"
         height="11px">
     </picture>
     <div class="middle-rack-background" id="middle-rack-background">
@@ -314,48 +312,49 @@
           width="31px"
           height="35.99px">
       </picture>
-      <picture>
+      <picture draggable="true">
         <source
           media="(min-width:1400px)"
           srcset="img/src/Salad3.png"
           width="186px"
-          height="153px">
+          height="153px"
+          draggable="true">
         <source
           media="(min-width:768px)"
           srcset="img/src/Salad2.png"
           width="124px"
-          height="102px">
+          height="102px"
+          draggable="true"
+        >
         <img
           src="img/src/Salad.png"
           alt="Salad"
-          class="item salad"
-          draggable="true"
           width="61.74px"
-          height="50.98px">
+          height="50.98px"
+          draggable="true"
+          class="item salad"
+        >
       </picture>
     </div>
     <picture>
       <source
         media="(min-width:1400px)"
-        srcset="img/src/Salad3.png"
-        width="186px"
-        height="153px">
+        srcset="img/src/TopOfBottomRack3.png"
+        width="846px"
+        height="81px">
       <source
         media="(min-width:768px)"
-        srcset="img/src/Salad2.png"
-        width="124px"
-        height="102px">
+        srcset="img/src/TopOfBottomRack2.png"
+        width="423px"
+        height="41px">
       <img
-        src="img/src/Salad.png"
-        alt="Salad"
-        class="item salad"
-        draggable="true"
-        width="61.74px"
-        height="50.98px">
+        src="img/src/TopOfBottomRack.svg"
+        alt="Top of bottom rack"
+        class="top-of-bottom-rack"
+        draggable="false"
+        width="214px"
+        height="21px">
     </picture>
-    <svg class="top-of-rack" width="212" height="21" viewBox="0 0 212 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M204.967 0.538055H6.40259L0 20.5328H211.37L204.967 0.538055Z" fill="#E3E7E8"/>
-    </svg>
     <div class="bottom-rack" id="bottom-rack">
     </div>
     <div class="foundation" id="foundation">
@@ -363,14 +362,28 @@
       </div>
     </div>
     <div class="cart" id="cart">
-      <img
-        src="img/src/Cart.png"
-        class="cart-image"
-        alt="Cart"
-        draggable="false"
-        width="276.08px"
-        height="240px"
-      >
+      <div class="cart-box" id="cart-box">
+      </div>
+      <picture class = "item">
+        <source
+          media="(min-width:1400px)"
+          srcset="img/src/Cart3.png"
+          width="1105px"
+          height="914px">
+        <source
+          media="(min-width:768px)"
+          srcset="img/src/Cart2.png"
+          width="553px"
+          height="458px">
+        <img
+          src="img/src/Cart.png"
+          class="cart-image"
+          alt="Cart"
+          draggable="false"
+          width="276.08px"
+          height="240px"
+        >
+      </picture>
     </div>
     <a href="https://lavka.yandex.ru/" class="hidden-button" id="buy-button">
       Оплатить корзину
@@ -381,12 +394,15 @@
       const racksWrapper = document.getElementById('racks-wrapper');
       const cart = document.getElementById('cart');
       const cartRect = cart.getBoundingClientRect();
+      const cartBox = document.getElementById('cart-box');
+      const cartBoxRect = cartBox.getBoundingClientRect();
       const cartItems = document.querySelectorAll('.cart-item');
       const buyButton = document.getElementById('buy-button');
       const halfOfCart = 50;
       const cartMargin = 75;
       const newItemInCartMargin = 40;
       let currentItem;
+      let currentImg;
 
       const checkBuyButton = (itemsCount) => {
         if (itemsCount <= 1) return;
@@ -396,8 +412,10 @@
 
       const addItemToCart = (itemsCount) => {
         cart.appendChild(currentItem);
-        currentItem.style.top = `${cartRect.height - halfOfCart - currentItem.getBoundingClientRect().height}px`;
-        currentItem.style.left = `${cartMargin + (itemsCount * newItemInCartMargin)}px`;
+        currentItem.style.position = "absolute";
+        currentImg.className = "";
+        currentItem.style.top = `${cartBox.offsetTop - currentImg.getBoundingClientRect().height}px`;
+        currentItem.style.left = `${cartBox.offsetLeft + (itemsCount * currentImg.getBoundingClientRect().width/2)}px`;
         currentItem.style.zIndex = "0";
         currentItem.classList.add('cart-item');
       }
@@ -405,7 +423,8 @@
       function handleStart (event){
         if (event.target.classList.contains('item')) {
           event.dataTransfer.setData('text/plain', event.target.textContent);
-          currentItem = event.target;
+          currentItem = event.target.closest('picture');
+          currentImg = event.target;
           console.dir(event.target.textContent)
         }
       }
