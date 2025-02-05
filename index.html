@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+  <html class ="page" lang="ru">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>  Yandex test </title>
+      <link href="app/css/normalize.css" rel="stylesheet">
+      <link rel ="preload" href="app/css/app.min.css" as="style">
+      <link href="app/css/app.min.css" rel="stylesheet">
+      <script src="app/js/app.min.js" defer></script>
+  </head>
+  <body class="page__body">
+  <div class="racks-wrapper" id="racks-wrapper">
+    <picture>
+      <source
+        media="(min-width:1400px)"
+        srcset="app/img/src/Roof3.png"
+        width="846px"
+        height="48.32px">
+      <source
+        media="(min-width:768px)"
+        srcset="app/img/src/Roof2.png"
+        width="423px"
+        height="24.32px">
+      <img
+        src="app/img/src/Roof.png"
+        class="roof"
+        alt="Roof"
+        draggable="false"
+        width="212px"
+        height="12px">
+    </picture>
+    <div class="top-area" id="top-area">
+      <div class="flags" id="flags">
+        <picture>
+          <source
+            media="(min-width:1400px)"
+            srcset="app/img/src/Flags.svg"
+            width="850px"
+            height="125px">
+          <source
+            media="(min-width:768px)"
+            srcset="app/img/src/Flags.svg"
+            width="425px"
+            height="63px">
+          <img
+            src="app/img/src/FlagsPNG.png"
+            class="flags"
+            alt="Flags"
+            draggable="false"
+            width="212px"
+            height="31.32px">
+        </picture>
+      </div>
+      <div class="flags-shadow" id="flags-shadow">
+        <picture>
+          <source
+            media="(min-width:1400px)"
+            srcset="app/img/src/FlagsShadow.svg"
+            width="846px"
+            height="121.32px">
+          <source
+            media="(min-width:768px)"
+            srcset="app/img/src/FlagsShadow.svg"
+            width="423px"
+            height="61.32px">
+          <img
+            src="app/img/src/FlagsShadow.svg"
+            class="flags-shadow"
+            alt="FlagsShadow"
+            draggable="false"
+            width="199px"
+            height="40px">
+        </picture>
+        </svg>
+      </div>
+      <picture>
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Wine3.png"
+          width="148px"
+          height="497px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Wine2.png"
+          width="74px"
+          height="249px">
+        <img
+          src="app/img/src/WinePNG.png"
+          class="item wine"
+          alt="Wine"
+          draggable="true"
+          width="37px"
+          height="124.12px">
+      </picture>
+      <picture>
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Milk.svg"
+          width="148px"
+          height="363px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Milk.svg"
+          width="74px"
+          height="182px">
+        <img
+          src="app/img/src/Milk.svg"
+          alt="Milk"
+          class="item milk"
+          draggable="true"
+          width="37px"
+          height="90.73px">
+      </picture>
+      <picture>
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Jar3.png"
+          width="184px"
+          height="166px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Jar2.png"
+          width="92px"
+          height="83px">
+        <img
+          src="app/img/src/JarPNG.png"
+          alt="Jar"
+          class="item jar"
+          draggable="true"
+          width="46px"
+          height="41.34px">
+      </picture>
+      <picture>
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Cheese3.png"
+          width="145px"
+          height="138px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Cheese2.png"
+          width="73px"
+          height="69px">
+        <img
+          src="app/img/src/CheesePNG.png"
+          alt="Cheese"
+          class="item cheese"
+          draggable="true"
+          width="36.2"
+          height="34.38px">
+      </picture>
+    </div >
+    <picture class="top-of-rack-background">
+      <source
+        media="(min-width:1400px)"
+        srcset="app/img/src/TopOfRackBackground3.png"
+        width="846px"
+        height="42.32px">
+      <source
+        media="(min-width:768px)"
+        srcset="app/img/src/TopOfRackBackground2.png"
+        width="423px"
+        height="22.32px">
+      <img
+        src="app/img/src/TopOfRackBackgroundPNG.png"
+        alt="TopOfRackBackground"
+        draggable="false"
+        width="213"
+        height="11">
+    </picture>
+    <div class="top-rack-background" id="top-rack-background">
+    </div>
+    <div class="rack-shadow" id="rack-shadow">
+    </div>
+    <div class="middle-area" id="middle-area">
+      <picture>
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Meet4.png"
+          width="215px"
+          height="214px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Meet2.png"
+          width="108px"
+          height="107px">
+        <img
+          src="app/img/src/MeetPNG.png"
+          alt="Meet"
+          class="item meet"
+          draggable="true"
+          width="49px"
+          height="48.76px">
+      </picture>
+      <picture>
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Chicken3.png"
+          width="263px"
+          height="250px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Chicken2.png"
+          width="132px"
+          height="125px">
+        <img
+          src="app/img/src/ChickenPNG.png"
+          alt="Chicken"
+          class="item chicken"
+          draggable="true"
+          width="54.47px"
+          height="49.85px">
+      </picture>
+      <picture>
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Chips.svg"
+          width="305px"
+          height="188px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Chips.svg"
+          width="153px"
+          height="94px">
+        <img
+          src="app/img/src/Chips.svg"
+          alt="Chips"
+          class="item chips"
+          draggable="true"
+          width="76.17px"
+          height="46.98px">
+      </picture>
+    </div>
+    <picture class="top-of-rack-background">
+      <source
+        media="(min-width:1400px)"
+        srcset="app/img/src/TopOfRackBackground3.png"
+        width="846px"
+        height="42.32px">
+      <source
+        media="(min-width:768px)"
+        srcset="app/img/src/TopOfRackBackground2.png"
+        width="423px"
+        height="22.32px">
+      <img
+        src="app/img/src/TopOfRackBackgroundPNG.png"
+        alt="TopOfRackBackground"
+        draggable="false"
+        width="213"
+        height="11px">
+    </picture>
+    <div class="middle-rack-background" id="middle-rack-background">
+    </div>
+    <div class="rack-shadow" id="middle-rack-shadow">
+    </div>
+    <div class="bottom-area" id="bottom-area" draggable="true">
+      <picture>
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Pineapple3.png"
+          width="140px"
+          height="247px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Pineapple2.png"
+          width="70px"
+          height="149px">
+        <img
+          src="app/img/src/PineapplePNG.png"
+          alt="Pineapple"
+          class="item pineapple"
+          draggable="true"
+          width="35px"
+          height="74.08"
+        >
+      </picture>
+      <picture>
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Bananas3.png"
+          width="188px"
+          height="190px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Bananas2.png"
+          width="94px"
+          height="95px">
+        <img
+          src="app/img/src/Bananas.png"
+          alt="Bananas"
+          class="item bananas"
+          draggable="true"
+          width="47px"
+          height="47.41px">
+      </picture>
+      <picture>
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Apple3.png"
+          width="124px"
+          height="144px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Apple2.png"
+          width="62px"
+          height="72px">
+        <img
+          src="app/img/src/ApplePNG.png"
+          alt="Apple"
+          class="item apple"
+          draggable="true"
+          width="31px"
+          height="35.99px">
+      </picture>
+      <picture draggable="true">
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Salad3.png"
+          width="186px"
+          height="153px"
+          draggable="true">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Salad2.png"
+          width="124px"
+          height="102px"
+          draggable="true"
+        >
+        <img
+          src="app/img/src/Salad.png"
+          alt="Salad"
+          width="61.74px"
+          height="50.98px"
+          draggable="true"
+          class="item salad"
+        >
+      </picture>
+    </div>
+    <picture>
+      <source
+        media="(min-width:1400px)"
+        srcset="app/img/src/TopOfBottomRack3.png"
+        width="846px"
+        height="81px">
+      <source
+        media="(min-width:768px)"
+        srcset="app/img/src/TopOfBottomRack2.png"
+        width="423px"
+        height="41px">
+      <img
+        src="app/img/src/TopOfBottomRack.svg"
+        alt="Top of bottom rack"
+        class="top-of-bottom-rack"
+        draggable="false"
+        width="214px"
+        height="21px">
+    </picture>
+    <div class="bottom-rack" id="bottom-rack">
+    </div>
+    <div class="foundation" id="foundation">
+      <div class="top-of-foundation" id="top-of-foundation">
+      </div>
+    </div>
+    <div class="cart" id="cart">
+      <div class="cart-box" id="cart-box">
+      </div>
+      <picture class = "item">
+        <source
+          media="(min-width:1400px)"
+          srcset="app/img/src/Cart3.png"
+          width="1105px"
+          height="914px">
+        <source
+          media="(min-width:768px)"
+          srcset="app/img/src/Cart2.png"
+          width="553px"
+          height="458px">
+        <img
+          src="app/img/src/Cart.png"
+          class="cart-image"
+          alt="Cart"
+          draggable="false"
+          width="276.08px"
+          height="240px"
+        >
+      </picture>
+      <a href="https://lavka.yandex.ru/" class="hidden-button" id="buy-button">
+        Оплатить корзину
+      </a>
+    </div>
+  </div>
+  </body>
+
+</html>
