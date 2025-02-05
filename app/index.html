@@ -7,6 +7,7 @@
       <link href="css/normalize.css" rel="stylesheet">
       <link rel ="preload" href="css/app.min.css" as="style">
       <link href="css/app.min.css" rel="stylesheet">
+      <script src="js/app.min.js" defer></script>
   </head>
   <body class="page__body">
   <div class="racks-wrapper" id="racks-wrapper">
@@ -390,131 +391,5 @@
     </div>
   </div>
   </body>
-    <script>
-      const isMobileDevice = () => /Mobi|Android/i.test(navigator.userAgent);
-      const racksWrapper = document.getElementById('racks-wrapper');
-      const cart = document.getElementById('cart');
-      const cartRect = cart.getBoundingClientRect();
-      const cartBox = document.getElementById('cart-box');
-      const buyButton = document.getElementById('buy-button');
-      let startItemTop;
-      let startItemLeft;
-      let currentItem;
-      let itemRect;
-      let currentImg;
-      let startX = 0;
-      let startY = 0;
-      let touch;
-      let deltaY;
-      let deltaX;
 
-      const makeStartItemPossition = () => {
-        currentImg.style.left = `${startItemLeft}px`;
-        currentImg.style.top = `${startItemTop}px`;
-        currentItem.style.top = "0px";
-        currentItem.style.left = "0px";
-      }
-
-      const checkBuyButton = (itemsCount) => {
-        if (itemsCount <= 1) return;
-          buyButton.classList.remove('hidden-button');
-          buyButton.classList.add('buy-button');
-          buyButton.style.left = `${cartRect.width/4}px`;
-          const makeOpaciti = setInterval(()=> buyButton.style.opacity = "0.5", 500);
-          const cancelOpaciti = setInterval(()=> buyButton.style.opacity = "1", 1000);
-          setTimeout(()=> clearInterval(makeOpaciti, cancelOpaciti), 3000)
-      }
-
-      const addItemToCart = (itemsCount) => {
-        cart.appendChild(currentItem);
-        currentItem.style.position = "absolute";
-        if (!isMobileDevice()) currentImg.className = "";
-        currentItem.style.top = `${cartBox.offsetTop - currentImg.getBoundingClientRect().height}px`;
-        currentItem.style.left = `${cartBox.offsetLeft + (itemsCount * currentImg.getBoundingClientRect().width/2)}px`;
-        currentItem.style.zIndex = "0";
-        currentItem.classList.add('cart-item');
-      }
-
-      function handleStart (event){
-        if (!event.target.classList.contains('item')) return;
-
-          if (!isMobileDevice()){
-            event.dataTransfer.setData('text/plain', event.target.textContent);
-          }
-
-          currentItem = event.target.closest('picture');
-          itemRect = currentItem.getBoundingClientRect();
-          currentImg = event.target;
-          imgRect = currentImg.getBoundingClientRect();
-          const parentRect = currentItem.parentElement.getBoundingClientRect();
-          startItemLeft = imgRect.left - parentRect.left;
-          startItemTop = imgRect.top - parentRect.top;
-
-          startX = event.touches[0].clientX;
-          startY = event.touches[0].clientY;
-      }
-
-      function handleMove(event) {
-        if (!currentItem) return;
-
-          event.preventDefault();
-          touch = event.touches[0];
-          deltaX = touch.clientX - startX;
-          deltaY = touch.clientY - startY;
-          currentItem.style.position = "absolute";
-          currentItem.style.left = `${Math.floor(deltaX)}px`;
-          currentItem.style.top = `${Math.floor(deltaY)}px`;
-      }
-
-      function handleEnd(event) {
-        if (!currentItem) return;
-
-          if ( (touch.clientX - imgRect.width) >= cartRect.left && touch.clientX <= cartRect.right &&
-            (touch.clientY + imgRect.height) >= cartRect.top && touch.clientY <= cartRect.bottom) {
-            const cartItems = document.querySelectorAll('.cart-item');
-            const itemsCount = cartItems.length;
-            checkBuyButton(itemsCount);
-
-            if (itemsCount <= 2) {
-              addItemToCart(itemsCount);
-            }else{
-              makeStartItemPossition();
-              return;
-            }
-
-          }else{
-            makeStartItemPossition()
-            return;
-          }
-
-          currentImg.className = "";
-          currentItem = null;
-      }
-
-      function handleDrop (event) {
-        event.preventDefault();
-        const cartItems = document.querySelectorAll('.cart-item');
-        const itemsCount = cartItems.length;
-        checkBuyButton(itemsCount);
-
-        if(itemsCount > 2) return;
-
-        addItemToCart(itemsCount);
-
-        currentItem = null;
-      }
-
-      racksWrapper.addEventListener('dragstart', handleStart);
-
-      cart.addEventListener('dragover', (event) => {
-        event.preventDefault();
-      });
-
-      cart.addEventListener('drop', handleDrop);
-
-      racksWrapper.addEventListener('touchstart', handleStart);
-      racksWrapper.addEventListener('touchmove', handleMove);
-      racksWrapper.addEventListener('touchend', handleEnd);
-
-    </script>
 </html>
