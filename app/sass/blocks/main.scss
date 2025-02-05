@@ -33,6 +33,7 @@ body{
   background-repeat: no-repeat;
   box-sizing: border-box;
   width: 300px;
+  margin: auto;
   @media (min-width: $tablet-width){
     width: 768px;
 
@@ -40,10 +41,6 @@ body{
   @media (min-width: $desktop-width){
     width: 1440px;
   }
-}
-
-img{
-  //max-width: 100%;
 }
 
 a{
@@ -90,17 +87,6 @@ li{
   }
   @media (min-width: $desktop-width){
     width: 795px;
-  }
-}
-
-.roof{
-  //margin-top: -8px;
-  @media (min-width: $tablet-width){
-    //height: 600px;
-
-  }
-  @media (min-width: $desktop-width){
-    //margin-top: -5px;
   }
 }
 
@@ -163,6 +149,8 @@ li{
 .middle-area,
 .bottom-area{
   height: 53px;
+  margin-top: -1px;
+
   @media (min-width: $tablet-width){
     height: 100px;
 
@@ -461,6 +449,7 @@ li{
 
 .cart{
   position: absolute;
+  display: flex;
   top: 380px;
   width: 278px;
   height: 240px;
@@ -485,12 +474,10 @@ li{
 }
 
 .cart-box{
-  //background-color: #D24899;
-  //opacity: 0.5;
   position: absolute;
   width: 150px;
   height: 50px;
-  top: 185px;
+  top: 190px;
   left: 70px;
 
   @media (min-width: $tablet-width){
@@ -512,31 +499,31 @@ li{
 }
 
 .buy-button{
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: end;
   color: #21201F;
   width: 174px;
   height: 56px;
   background-color: #FCE000;
   border-radius: 16px;
-  //font: YS Text;
   margin-top: -170px;
   z-index: 3;
-  top: 700px;
-  left: 65px;
+  top: -20px;
+  font-size: 16px;
 
   @media (min-width: $tablet-width){
     width: 300px;
     height: 100px;
-    top: 1200px;
+    font-size: 24px;
   }
   @media (min-width: $desktop-width){
     width: 650px;
     height: 150px;
-    top: 2250px;
-    left: 400px;
+    font-size: 52px;
+    top: -90px
   }
 }
 

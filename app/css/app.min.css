@@ -23,7 +23,8 @@ body {
   background-repeat: no-repeat;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 300px
+  width: 300px;
+  margin: auto
 }
 @media (min-width:768px) {
   body {
@@ -149,7 +150,8 @@ li {
 }
 .bottom-area,
 .middle-area {
-  height: 53px
+  height: 53px;
+  margin-top: -1px
 }
 @media (min-width:768px) {
   .bottom-area,
@@ -491,6 +493,9 @@ li {
 }
 .cart {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   top: 380px;
   width: 278px;
   height: 240px;
@@ -519,7 +524,7 @@ li {
   position: absolute;
   width: 150px;
   height: 50px;
-  top: 185px;
+  top: 190px;
   left: 70px
 }
 @media (min-width:768px) {
@@ -542,7 +547,7 @@ li {
   display: none
 }
 .buy-button {
-  position: absolute;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -552,6 +557,9 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
   color: #21201f;
   width: 174px;
   height: 56px;
@@ -559,21 +567,21 @@ li {
   border-radius: 16px;
   margin-top: -170px;
   z-index: 3;
-  top: 700px;
-  left: 65px
+  top: -20px;
+  font-size: 16px
 }
 @media (min-width:768px) {
   .buy-button {
     width: 300px;
     height: 100px;
-    top: 1200px
+    font-size: 24px
   }
 }
 @media (min-width:1440px) {
   .buy-button {
     width: 650px;
     height: 150px;
-    top: 2250px;
-    left: 400px
+    font-size: 52px;
+    top: -90px
   }
 }
